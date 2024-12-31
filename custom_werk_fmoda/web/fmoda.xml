@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="template" xml:space="preserve">
+
+    <t t-name="pos_sale.Orderline.internal_reference" t-inherit="point_of_sale.Orderline" t-inherit-mode="extension">
+
+        <xpath expr="//div[contains(@class, 'product-ref')]/span" position="after">
+
+            <span t-if="line.default_code" class="product-default-code text-muted">
+
+                (<t t-esc="line.default_code"/>)
+
+            </span>
+
+        </xpath>
+
+    </t>
+
+</templates>
